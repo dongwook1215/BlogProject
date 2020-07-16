@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 auto;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <h2>목록</h2>
+    </div>
+    <div align="right">
+        <a href="{% url 'create' %}">글쓰기</a>
+    </div>
+    {% for item in blog %}
+        제목:{{ item.title }} <hr>
+        날짜:{{ item.pub_date }} <hr>
+        {{ item.sum }} ... <a href="{% url 'detail' item.id %}">더보기</a><hr>
+        <br>
+    {% endfor %}
+</body>
+</html>

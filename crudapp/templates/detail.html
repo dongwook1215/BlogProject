@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 auto;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <h2>상세내용</h2>
+    </div>
+    제목: {{ blog_detail.title }} <hr>
+    날짜: {{ blog_detail.pub_date }} <hr>
+    {{ blog_detail.body }}<hr>
+    <br>
+    <div align="center">
+        <a href="{% url 'main' %}">돌아가기</a>
+        <a href="{% url 'recreate' blog_detail.id %}">수정하기</a>
+        <a href="{% url 'remove' blog_detail.id %}">삭제하기</a>
+    </div>
+</body>
+</html>
